@@ -1,3 +1,7 @@
+// Implementation of sum and max method for lists
+// Created September 17, 2013 by Benjamin Shyong.
+// hello@benshyong.com
+
 package example
 
 import common._
