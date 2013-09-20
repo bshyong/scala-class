@@ -51,15 +51,8 @@ object Main {
    * Exercise 3
    */
   def countChange(money: Int, coins: List[Int]): Int = {
-    def counter(money:Int, coins:List[Int], count: Int): Int = {
-      if (money%coins.head == 0) numWays(money, coins.tail, count+1)
-      else numWays(money, coins.tail, count)
-    }
-    def numWays(money: Int, coins: List[Int], count: Int): Int = {
-      if (coins.isEmpty) count
-      else counter(money, coins, count)
-    }
-    if (coins.isEmpty) 0
-    else numWays(money, coins, 0)
+	if (money==0) 1
+	else if (coins.isEmpty || money < 0) 0
+	else countChange(money, coins.tail) + countChange(money-coins.head, coins)
   }
 }
