@@ -73,13 +73,18 @@ object scratch {
       else iter(a+1)
     }
     iter(bound * -1)
-  };System.out.println("""forall: (s: Int => Boolean, p: Int => Boolean)Boolean""");$skip(187); 
+  };System.out.println("""forall: (s: Int => Boolean, p: Int => Boolean)Boolean""");$skip(324); 
   /**
    * Returns whether there exists a bounded integer within `s`
    * that satisfies `p`.
    */
   def exists(s: Set, p: Int => Boolean): Boolean = {
-	forall(s, (x: Int) => !p(x))
+    def iter(a: Int): Boolean = {
+      if (contains(s,a) && a<=bound) p(a) || iter(a+1)
+      else if (a>bound) false
+      else iter(a+1)
+    }
+    iter(bound * -1)
   };System.out.println("""exists: (s: Int => Boolean, p: Int => Boolean)Boolean""");$skip(154); 
 
   /**
@@ -90,7 +95,9 @@ object scratch {
   };System.out.println("""map: (s: Int => Boolean, f: Int => Int)Int => Boolean""");$skip(40); val res$6 = 
 
 
-forall(Set(1,2,3,4), (x: Int) => x<4);System.out.println("""res6: Boolean = """ + $show(res$6))}
+forall(Set(1,2,3,4), (x: Int) => x<4);System.out.println("""res6: Boolean = """ + $show(res$6));$skip(37); val res$7 = 
+
+exists(Set(1,2,6), (x: Int) => x>6);System.out.println("""res7: Boolean = """ + $show(res$7))}
 
 
 

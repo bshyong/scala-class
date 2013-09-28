@@ -109,4 +109,9 @@ class FunSetSuite extends FunSuite {
       assert(!contains(s, 3), "Union 3")
     }
   }
+  
+  test("Exists - check for false positive") {
+    assert(!exists(Set(1,3,4,5,7,1000), (x: Int) => x==2), "false positive")
+  }
+  
 }

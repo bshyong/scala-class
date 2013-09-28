@@ -80,7 +80,12 @@ object scratch {
    * that satisfies `p`.
    */
   def exists(s: Set, p: Int => Boolean): Boolean = {
-	forall(s, (x: Int) => !p(x))
+    def iter(a: Int): Boolean = {
+      if (contains(s,a) && a<=bound) p(a) || iter(a+1)
+      else if (a>bound) false
+      else iter(a+1)
+    }
+    iter(bound * -1)
   }                                               //> exists: (s: Int => Boolean, p: Int => Boolean)Boolean
 
   /**
@@ -92,6 +97,8 @@ object scratch {
 
 
 forall(Set(1,2,3,4), (x: Int) => x<4)             //> res6: Boolean = false
+
+exists(Set(1,2,6), (x: Int) => x>6)               //> res7: Boolean = false
 
 
 
