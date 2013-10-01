@@ -7,11 +7,14 @@ object rationals {;import org.scalaide.worksheet.runtime.library.WorksheetSuppor
   x.numer;System.out.println("""res0: Int = """ + $show(res$0));$skip(10); val res$1 = 
   x.denom;System.out.println("""res1: Int = """ + $show(res$1));$skip(18); val res$2 = 
   x.sub(y).sub(z);System.out.println("""res2: week3.Rational = """ + $show(res$2));$skip(11); val res$3 = 
-  x.max(z);System.out.println("""res3: week3.Rational = """ + $show(res$3))}
+  x.max(z);System.out.println("""res3: week3.Rational = """ + $show(res$3));$skip(18); val res$4 = 
+  new Rational(2);System.out.println("""res4: week3.Rational = """ + $show(res$4))}
 }
 
 class Rational(x: Int, y: Int){
 	require(y != 0, "denominator must be positive")
+	
+	def this(x: Int) = this(x, 1)
 
 	private def gcd(a: Int, b: Int): Int = if (b==0) a else gcd(b, a % b)
 	private val g = gcd(x,y)

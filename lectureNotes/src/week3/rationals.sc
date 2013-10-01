@@ -8,10 +8,13 @@ object rationals {
   x.denom                                         //> res1: Int = 2
   x.sub(y).sub(z)                                 //> res2: week3.Rational = -2/1
   x.max(z)                                        //> res3: week3.Rational = 3/2
+  new Rational(2)                                 //> res4: week3.Rational = 2/1
 }
 
 class Rational(x: Int, y: Int){
 	require(y != 0, "denominator must be positive")
+	
+	def this(x: Int) = this(x, 1)
 
 	private def gcd(a: Int, b: Int): Int = if (b==0) a else gcd(b, a % b)
 	private val g = gcd(x,y)
