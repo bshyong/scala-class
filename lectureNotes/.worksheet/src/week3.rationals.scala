@@ -9,6 +9,7 @@ object rationals {;import org.scalaide.worksheet.runtime.library.WorksheetSuppor
   x - y - z;System.out.println("""res2: week3.Rational = """ + $show(res$2));$skip(10); val res$3 = 
   x max z;System.out.println("""res3: week3.Rational = """ + $show(res$3));$skip(18); val res$4 = 
   new Rational(2);System.out.println("""res4: week3.Rational = """ + $show(res$4))}
+
 }
 
 class Rational(x: Int, y: Int){

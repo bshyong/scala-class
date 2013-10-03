@@ -9,6 +9,7 @@ object rationals {
   x - y - z                                       //> res2: week3.Rational = -2/1
   x max z                                         //> res3: week3.Rational = 3/2
   new Rational(2)                                 //> res4: week3.Rational = 2/1
+
 }
 
 class Rational(x: Int, y: Int){
